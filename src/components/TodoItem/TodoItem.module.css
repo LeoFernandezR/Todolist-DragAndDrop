@@ -1,0 +1,25 @@
+.displayFlex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 18px;
+}
+.divFlex {
+	display: flex;
+	align-items: center;
+}
+.input {
+	margin-right: 5px;
+}
+.li {
+	list-style: none;
+	margin-bottom: 5px;
+	padding: 0 15px;
+}
+.delete {
+	color: #ffffff;
+	background-color: red;
+	border: none;
+	border-radius: 100%;
+	padding: 5px 8px;
+}

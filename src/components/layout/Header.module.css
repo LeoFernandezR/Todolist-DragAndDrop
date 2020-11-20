@@ -1,0 +1,18 @@
+.header {
+	background-color: #262626;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header h1 {
+	font-size: 40px;
+	color: #ffffff;
+	margin-left: 20px;
+	flex: 0 0 calc(80% - 10px);
+}
+.header a {
+	color: #ffffff;
+	flex: 0 0 calc(10% - 10px);
+}

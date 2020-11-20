@@ -1,0 +1,15 @@
+.displayFlex {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.input {
+	flex: 0 0 calc(90% - 20px);
+	padding: 5px 0;
+}
+.button {
+	flex: 0 0 calc(10% - 20px);
+	padding: 5px 0;
+}
