@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Todos from './components/Todos/Todos'
 import Axios from 'axios'
 import Header from './components/layout/Header'
-import { v4 as uuidv4 } from 'uuid'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import About from './components/pages/About'
 
