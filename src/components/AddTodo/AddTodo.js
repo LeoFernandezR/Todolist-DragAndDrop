@@ -1,39 +1,29 @@
-import React, { Component } from 'react'
-import PropType from 'prop-types'
+import React, { useState, useContext } from 'react'
 
 import styles from './AddTodo.module.css'
+import { GlobalContext } from '../../context/GlobalContext'
+export default function AddTodo () {
+	const [ input, setInput ] = useState('')
+	const { addTodo } = useContext(GlobalContext)
 
-export default class AddTodo extends Component {
-	constructor (props) {
-		super(props)
-
-		this.state = {
-			input : ''
+	const onSubmit = (e) => {
+		e.preventDefault()
+		if (input !== '') {
+			addTodo(input)
+			setInput('')
 		}
 	}
-	onSubmit = (e) => {
-		e.preventDefault()
-		this.props.handleSubmit(this.state.input)
-		this.setState({ input: '' })
+
+	const handleChange = (e) => {
+		setInput(e.target.value)
 	}
 
-	handleChange = (e) => {
-		this.setState({
-			input : e.target.value
-		})
-	}
-	render () {
-		return (
-			<form onSubmit={this.onSubmit} className={styles.displayFlex}>
-				<input className={styles.input} value={this.state.input} onChange={this.handleChange} />
-				<button className={styles.button} type="submit">
-					Submit
-				</button>
-			</form>
-		)
-	}
-}
-
-AddTodo.propTypes = {
-	handleSubmit : PropType.func.isRequired
+	return (
+		<form onSubmit={onSubmit} className={styles.displayFlex}>
+			<input className={styles.input} value={input} onChange={handleChange} />
+			<button className={styles.button} type="submit">
+				Submit
+			</button>
+		</form>
+	)
 }

@@ -1,32 +1,21 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext, useEffect } from 'react'
 
 import AddTodo from '../AddTodo/AddTodo'
-import TodoItem from '../TodoItem/TodoItem'
+import TodoList from '../TodoList/TodoList'
 import styles from './Todos.module.css'
+import { GlobalContext } from '../../context/GlobalContext'
 
-class Todos extends Component {
-	render () {
-		return (
-			<div className={styles.container}>
-				<AddTodo handleSubmit={this.props.handleSubmit} />
-				<ul>
-					<TodoItem
-						todos={this.props.todos}
-						handleClick={this.props.handleClick}
-						deleteClick={this.props.deleteClick}
-					/>
-				</ul>
-			</div>
-		)
-	}
+export default function Todos () {
+	const { todos, getTodos } = useContext(GlobalContext)
+
+	useEffect(() => {
+		getTodos()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
+	return (
+		<div className={styles.container}>
+			<AddTodo />
+			<TodoList todos={todos} />
+		</div>
+	)
 }
-
-Todos.propTypes = {
-	handleSubmit : PropTypes.func.isRequired,
-	todos        : PropTypes.array.isRequired,
-	handleClick  : PropTypes.func.isRequired,
-	deleteClick  : PropTypes.func.isRequired
-}
-
-export default Todos
