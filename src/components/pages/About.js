@@ -1,8 +1,29 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const Container = styled.div`
+	margin: 0 auto;
+	width: 82.5%;
+	background-color: #ffffff;
+	padding: 5px 40px;
+	border-radius: 25px;
+	margin-bottom: 20px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+	h1 {
+		margin: 10px 10px 10px 0;
+		font-size: 32px;
+	}
+
+	p {
+		margin-bottom: 5px;
+		text-align: justify;
+	}
+`
 
 export default function About () {
 	return (
-		<div style={{ margin: '0 auto', width: '90%', textAlign: 'justify' }}>
+		<Container>
 			<h1>About</h1>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -48,14 +69,6 @@ export default function About () {
 				consequat id.{' '}
 			</p>
 			<br />
-			<p>
-				Fringilla ut morbi tincidunt augue interdum velit. Vehicula ipsum a arcu cursus. Proin sagittis nisl rhoncus
-				mattis rhoncus urna neque. Malesuada proin libero nunc consequat interdum varius sit amet mattis. Platea
-				dictumst vestibulum rhoncus est. Amet nisl suscipit adipiscing bibendum. Curabitur gravida arcu ac tortor
-				dignissim convallis aenean et. Tellus molestie nunc non blandit massa. Hendrerit gravida rutrum quisque non
-				tellus orci ac auctor. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Arcu felis bibendum ut tristique
-				et egestas quis ipsum.
-			</p>
-		</div>
+		</Container>
 	)
 }

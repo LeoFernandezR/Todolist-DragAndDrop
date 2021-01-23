@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import Todos from './components/Todos/Todos'
+import Todos from './components/Todos'
 import Header from './components/layout/Header'
 import About from './components/pages/About'
 import { GlobalProvider } from './context/GlobalContext'
@@ -12,8 +12,8 @@ export default function App () {
 		<GlobalProvider>
 			<Router>
 				<Header />
-				<Route exact path="/" component={Todos} />
-				<Route path="/about" component={About} />
+				<Route exact path='/' component={Todos} />
+				<Route path='/about' component={About} />
 			</Router>
 		</GlobalProvider>
 	)
