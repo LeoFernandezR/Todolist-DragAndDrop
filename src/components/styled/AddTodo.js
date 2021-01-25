@@ -17,8 +17,9 @@ export const SubmitButton = styled.button`
 	text-shadow: -2px 1px 6px rgba(0, 0, 0, 0.4);
 	color: #ffffff;
 	font-weight: 600;
+	font-size: 18px;
 	flex: 0 0 calc(30% - 10px);
-	padding: 8px 0;
+	padding: 7px 0;
 	-webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
 	box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);

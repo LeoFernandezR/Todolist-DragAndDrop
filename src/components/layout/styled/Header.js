@@ -65,6 +65,10 @@ export const Container = styled.header`
 		justify-content: space-between;
 		align-items: center;
 		flex-direction: column;
+		background-color: white;
+		border-radius: 10px;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+		margin-top: 10px;
 
 		&.hidden {
 			display: none;
@@ -74,6 +78,7 @@ export const Container = styled.header`
 			justify-content: space-between;
 			background-color: unset;
 			flex: 0 0 calc(20% - 10px);
+			box-shadow: none;
 
 			&.hidden {
 				display: flex;
@@ -82,19 +87,24 @@ export const Container = styled.header`
 	}
 
 	a {
-		color: #ffffff;
-		font-size: 25px;
-		font-weight: 500;
+		color: #000000;
+		text-shadow: none;
+		font-weight: 600;
+		margin: 10px 0;
+		font-size: 22px;
 		transition: color 0.3s ease-out;
 
-		&:hover {
-			color: #e1e1e1;
-		}
-
 		@media (min-width: 768px) {
-			margin-right: 12px;
+			text-shadow: inherit;
+			color: #ffffff;
+			font-size: 25px;
+			font-weight: 500;
+			margin: 0 12px 0 0;
 			&:last-child {
 				margin-right: 0;
+			}
+			&:hover {
+				color: #e1e1e1;
 			}
 		}
 	}
