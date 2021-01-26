@@ -34,21 +34,37 @@ export const Container = styled.header`
 		background-color: transparent;
 		outline: none;
 		border: none;
+		border-radius: 10px;
 		z-index: 1000;
+		transition: all 0.3s ease-out;
+
+		&:hover {
+			background-color: rgba(0,0,0,0.2)
+		}
 
 		@media (min-width: 768px) {
 			display: none;
-			opacity: 1;
+		}
+		&.transform span {
+			&:nth-child(1) {
+			transform:	translateY(8px) rotate(45deg) 
+			}
+			&:nth-child(2) {
+				opacity: 0;
+			}
+			&:nth-child(3) {
+				transform: translateY(-8px) rotate(-45deg);
+			}
 		}
 	}
 	button span {
 		background-color: currentColor;
 		min-height: 3px;
-		border-radius: 25%;
 		display: block;
 		left: calc(50% - 15px);
 		position: absolute;
 		width: 30px;
+		transition: transform 0.3s ease-out;
 
 		&:nth-child(1) {
 			top: calc(50% - 9px);
@@ -59,9 +75,11 @@ export const Container = styled.header`
 		&:nth-child(3) {
 			top: calc(50% + 7px);
 		}
+
+
 	}
 	nav {
-		display: flex;
+		display: none;
 		justify-content: space-between;
 		align-items: center;
 		flex-direction: column;
@@ -70,17 +88,18 @@ export const Container = styled.header`
 		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 		margin-top: 10px;
 
-		&.hidden {
-			display: none;
+		&.active {
+			display: flex;
 		}
 		@media (min-width: 768px) {
+			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			background-color: unset;
 			flex: 0 0 calc(20% - 10px);
 			box-shadow: none;
 
-			&.hidden {
+			&.active {
 				display: flex;
 			}
 		}
@@ -90,21 +109,39 @@ export const Container = styled.header`
 		color: #000000;
 		text-shadow: none;
 		font-weight: 600;
-		margin: 10px 0;
 		font-size: 22px;
-		transition: color 0.3s ease-out;
+		transition: all 0.3s ease-out;
+		width: 100%;
+		text-align: center;
+
+		&:hover {
+			background-color: rgba(0,0,0,0.2);
+			
+		}
+
+		&:first-child {
+			border-radius: 10px 10px 0 0;
+			padding: 15px 0 7.5px 0;
+
+		}
+
+		&:last-child {
+			padding: 7.5px 0 15px 0;
+			border-radius: 0 0 10px 10px;
+		}
 
 		@media (min-width: 768px) {
 			text-shadow: inherit;
 			color: #ffffff;
 			font-size: 25px;
 			font-weight: 500;
-			margin: 0 12px 0 0;
+			padding: 0 12px 0 0 !important;
 			&:last-child {
-				margin-right: 0;
+				padding-right: 0;
 			}
 			&:hover {
 				color: #e1e1e1;
+				background-color: transparent;
 			}
 		}
 	}
