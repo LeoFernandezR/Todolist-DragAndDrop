@@ -1,4 +1,4 @@
-## GameStore App
+## TodoList App
 
 *  [Setup](#setup)
 
