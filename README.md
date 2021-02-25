@@ -10,6 +10,8 @@
 
 ## Setup
 
+Live on: https://todolist-drag-and-drop.netlify.app/
+
 To run this project, install it locally using npm:
 
   
